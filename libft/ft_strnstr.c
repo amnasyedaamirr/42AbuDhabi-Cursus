@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 00:46:29 by aaamir            #+#    #+#             */
-/*   Updated: 2022/05/23 21:36:47 by aaamir           ###   ########.fr       */
+/*   Created: 2022/05/23 21:24:11 by aaamir            #+#    #+#             */
+/*   Updated: 2022/05/23 21:24:23 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	size_t	i;
+	size_t		position;
 
-	if (dst == src || !len)
-		return (dst);
-	i = 0;
-	if (dst < src)
+	if (*to_find == '\0')
+		return ((char *)str);
+	position = ft_strlen((char *)to_find);
+	while (*str != '\0' && len-- >= position)
 	{
-		while (i < len)
-		{
-			*((char *)dst + i) = *((char *)src + i);
-			i++;
-		}
+		if (*str == *to_find && ft_memcmp(str, to_find, position) == 0)
+			return ((char *)str);
+		str++;
 	}
-	else
-	{
-		while (len > 0)
-		{
-			*((char *)dst + len - 1) = *((char *)src + len - 1);
-			len--;
-		}
-	}
-	return (dst);
+	return (NULL);
 }
