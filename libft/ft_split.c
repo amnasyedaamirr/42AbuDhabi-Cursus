@@ -1,63 +1,96 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/12 17:43:33 by aaamir            #+#    #+#             */
+/*   Updated: 2022/06/12 17:47:08 by aaamir           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t		count_words(char const *s, char c)
+#include <stdlib.h>
+
+int	char_is_separator(char c, char *c)
 {
-	size_t		count;
+	int	i;
 
-	count = 0;
-	while (*s != '\0')
-	{
-		if (*s == c)
-			s++;
-		else
-		{
-			count++;
-			while (*s != '\0' && *s != c)
-				s++;
-		}
-	}
-	return (count);
-}
-
-char		**free_machine(char **s, size_t i)
-{
-	while (s[i] != NULL && i >= 0)
-	{
-		free(s[i]);
-		s[i] = NULL;
-		i--;
-	}
-	free(s);
-	s = NULL;
-	return (NULL);
-}
-
-char		**ft_split(char const *s, char c)
-{
-	size_t		i;
-	size_t		len;
-	size_t		word_count;
-	char		**words;
-
-    words = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
-	if (!s || !words)
-		return (NULL);
-	word_count = count_words(s, c);
 	i = 0;
-	while (*s)
+	while (c[i] != '\0')
 	{
-		if (*s == c)
-			s++;
+		if (c == c[i])
+			return (1);
+		i++;
+	}
+	if (c == '\0')
+		return (1);
+	return (0);
+}
+
+int	count_words(char *str, char *c)
+{
+	int	i;
+	int	words;
+
+	words = 0;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (char_is_separator(str[i + 1], c) == 1
+			&& char_is_separator(str[i], c) == 0)
+			words++;
+		i++;
+	}
+	return (words);
+}
+
+void	write_word(char *dest, char *from, char *c)
+{
+	int	i;
+
+	i = 0;
+	while (char_is_separator(from[i], c) == 0)
+	{
+		dest[i] = from[i];
+		i++;
+	}
+	dest[i] = '\0';
+}
+
+void	write_split(char **split, char *str, char *c)
+{
+	int		i;
+	int		j;
+	int		word;
+
+	word = 0;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (char_is_separator(str[i], c) == 1)
+			i++;
 		else
 		{
-			len = 0;
-			while (*(s + len) && *(s + len) != c)
-				len++;
-			if (i < word_count && !(words[i++] = ft_substr(s, 0, len)))
-				return (free_machine(words, i));
-			s += len;
+			j = 0;
+			while (char_is_separator(str[i + j], c) == 0)
+				j++;
+			split[word] = (char *) malloc(sizeof(char) * (j + 1));
+			write_word(split[word], str + i, c);
+			i += j;
+			word++;
 		}
 	}
-	words[i] = 0;
-	return (words);
+}
+
+char	**ft_split(char *s, char *c)
+{
+	char	**res;
+	int		words;
+
+	words = count_words(s, c);
+	res = (char **) malloc(sizeof(char *) * (words + 1));
+	res[words] = 0;
+	write_split(res, s, c);
+	return (res);
 }

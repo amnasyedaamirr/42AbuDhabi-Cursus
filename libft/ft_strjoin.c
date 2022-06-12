@@ -1,21 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/12 14:56:29 by aaamir            #+#    #+#             */
+/*   Updated: 2022/06/12 15:01:50 by aaamir           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int			i;
 	int			i_str;
-    size_t      s1_size;
-    size_t      s2_size;
-    size_t      buff_size;
+	size_t		buff_size;
 	char		*joined_str;
 
 	i = 0;
 	i_str = 0;
-    s1_size = ft_strlen(s1);
-    s2_size = ft_strlen(s2);
-    buff_size = s1_size + s2_size + 1;
-
-	if (!s1 || !s2 || !(joined_str = malloc(sizeof(char) * buff_size)))
+	buff_size = ft_strlen(s1) + ft_strlen(s2) + 1;
+	joined_str = malloc(sizeof(char) * buff_size);
+	if (!s1 || !s2 || !joined_str)
 		return (NULL);
 	while (s1[i])
 		joined_str[i_str++] = s1[i++];
