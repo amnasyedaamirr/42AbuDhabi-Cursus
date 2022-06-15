@@ -6,15 +6,15 @@
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 00:12:28 by aaamir            #+#    #+#             */
-/*   Updated: 2022/05/22 00:13:07 by aaamir           ###   ########.fr       */
+/*   Updated: 2022/06/15 21:52:24 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int arg)
+int	ft_isdigit(int input)
 {
-	if (arg >= '0' && arg <= '9')
+	if (input >= '0' && input <= '9')
 	{
 		return (1);
 	}

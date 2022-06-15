@@ -6,13 +6,13 @@
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 14:22:24 by aaamir            #+#    #+#             */
-/*   Updated: 2022/06/12 14:31:22 by aaamir           ###   ########.fr       */
+/*   Updated: 2022/06/15 21:42:23 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*pointer;
 	size_t	buff_size;

@@ -6,17 +6,17 @@
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 00:57:18 by aaamir            #+#    #+#             */
-/*   Updated: 2022/05/22 00:58:26 by aaamir           ###   ########.fr       */
+/*   Updated: 2022/06/15 23:24:40 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+int	ft_tolower(int input)
 {
-	if (c >= 65 && c <= 90)
+	if (input >= 65 && input <= 90)
 	{
-		return (c + 32);
+		return (input + 32);
 	}
-	return (c);
+	return (input);
 }

@@ -6,13 +6,13 @@
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 00:54:15 by aaamir            #+#    #+#             */
-/*   Updated: 2022/05/22 00:55:24 by aaamir           ###   ########.fr       */
+/*   Updated: 2022/06/15 22:37:34 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	unsigned int	count;
 	unsigned int	i;

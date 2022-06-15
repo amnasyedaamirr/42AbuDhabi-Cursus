@@ -6,20 +6,20 @@
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:43:33 by aaamir            #+#    #+#             */
-/*   Updated: 2022/06/12 17:47:08 by aaamir           ###   ########.fr       */
+/*   Updated: 2022/06/15 22:37:40 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	char_is_separator(char c, char *c)
+static int		char_is_separator(char c, char *charset)
 {
 	int	i;
 
 	i = 0;
-	while (c[i] != '\0')
+	while (charset[i] != '\0')
 	{
-		if (c == c[i])
+		if (c == charset[i])
 			return (1);
 		i++;
 	}
@@ -28,7 +28,7 @@ int	char_is_separator(char c, char *c)
 	return (0);
 }
 
-int	count_words(char *str, char *c)
+static int		count_words(char *str, char *charset)
 {
 	int	i;
 	int	words;
@@ -37,20 +37,20 @@ int	count_words(char *str, char *c)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (char_is_separator(str[i + 1], c) == 1
-			&& char_is_separator(str[i], c) == 0)
+		if (char_is_separator(str[i + 1], charset) == 1
+				&& char_is_separator(str[i], charset) == 0)
 			words++;
 		i++;
 	}
 	return (words);
 }
 
-void	write_word(char *dest, char *from, char *c)
+static void	write_word(char *dest, char *from, char *charset)
 {
 	int	i;
 
 	i = 0;
-	while (char_is_separator(from[i], c) == 0)
+	while (char_is_separator(from[i], charset) == 0)
 	{
 		dest[i] = from[i];
 		i++;
@@ -58,7 +58,7 @@ void	write_word(char *dest, char *from, char *c)
 	dest[i] = '\0';
 }
 
-void	write_split(char **split, char *str, char *c)
+static void	write_split(char **split, char *str, char *charset)
 {
 	int		i;
 	int		j;
@@ -68,29 +68,29 @@ void	write_split(char **split, char *str, char *c)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (char_is_separator(str[i], c) == 1)
+		if (char_is_separator(str[i], charset) == 1)
 			i++;
 		else
 		{
 			j = 0;
-			while (char_is_separator(str[i + j], c) == 0)
+			while (char_is_separator(str[i + j], charset) == 0)
 				j++;
-			split[word] = (char *) malloc(sizeof(char) * (j + 1));
-			write_word(split[word], str + i, c);
+			split[word] = (char*)malloc(sizeof(char) * (j + 1));
+			write_word(split[word], str + i, charset);
 			i += j;
 			word++;
 		}
 	}
 }
 
-char	**ft_split(char *s, char *c)
+char	**ft_split(char const *str, char *charset)
 {
 	char	**res;
 	int		words;
 
-	words = count_words(s, c);
-	res = (char **) malloc(sizeof(char *) * (words + 1));
+	words = count_words(str, charset);
+	res = (char**)malloc(sizeof(char*) * (words + 1));
 	res[words] = 0;
-	write_split(res, s, c);
+	write_split(res, str, charset);
 	return (res);
 }
