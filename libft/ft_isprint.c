@@ -6,7 +6,7 @@
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 00:13:18 by aaamir            #+#    #+#             */
-/*   Updated: 2022/06/15 21:53:55 by aaamir           ###   ########.fr       */
+/*   Updated: 2022/06/17 21:21:49 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isprint(int input)
 {
-	if (input >= 33 && input <= 126)
+	if (input >= 32 && input <= 126)
 	{
 		return (1);
 	}

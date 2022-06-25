@@ -6,7 +6,7 @@
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 14:22:24 by aaamir            #+#    #+#             */
-/*   Updated: 2022/06/15 21:42:23 by aaamir           ###   ########.fr       */
+/*   Updated: 2022/06/18 19:01:19 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t	buff_size;
 
 	buff_size = size * count;
+	if (size == SIZE_MAX && count > 1)
+		return (NULL);
 	pointer = (void *) malloc(buff_size);
 	if (!pointer)
 		return (NULL);
-	while (buff_size--)
-	{
-		*(unsigned char *)pointer++ = '\0';
-	}
+	ft_bzero(pointer, buff_size);
 	return (pointer);
 }

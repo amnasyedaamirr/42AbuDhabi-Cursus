@@ -6,7 +6,7 @@
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 23:50:25 by aaamir            #+#    #+#             */
-/*   Updated: 2022/06/15 23:25:29 by aaamir           ###   ########.fr       */
+/*   Updated: 2022/06/17 23:22:16 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,11 @@
 
 void	ft_bzero(void *str, size_t n)
 {
-	ft_memset(str, '\0', n);
+	unsigned char	*dummy;
+
+	dummy = str;
+	while (n--)
+	{
+		*dummy++ = '\0';
+	}
 }

@@ -6,7 +6,7 @@
 #    By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 23:08:05 by aaamir            #+#    #+#              #
-#    Updated: 2022/06/15 23:24:35 by aaamir           ###   ########.fr        #
+#    Updated: 2022/06/23 21:42:42 by aaamir           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,13 +22,22 @@ SRCS		= 	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
       				ft_strnstr.c ft_strrchr.c ft_strtrim.c \
       				ft_substr.c ft_tolower.c ft_toupper.c
 OBJS		=		${SRCS:.c=.o}
-CC			= 	cc
+BONUS_S 	= 	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
+      				ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
+      				ft_lstsize.c ft_lstnew.c ft_lstmap.c
+BONUS_O		= 	${BONUS_S:.c=.o}
+CC			= 	gcc
 RM			= 	rm -rf
 CFLAGS		= 	-Wall -Wextra -Werror
 .c.o : 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 ${NAME}:		${OBJS}
 		ar -rcs ${NAME} ${OBJS}
 all:		${NAME}
+bonus:		${NAME} ${BONUS_O}
+		ar -rc ${NAME} ${BONUS_O}
 clean:		
 	${RM} ${OBJS}
-re :        clean all
+fclean: 	clean
+	${RM} ${NAME} ${BONUS_O}
+re :        fclean all
+rebonus:    fclean bonus

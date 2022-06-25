@@ -6,7 +6,7 @@
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 17:39:16 by aaamir            #+#    #+#             */
-/*   Updated: 2022/06/12 17:40:29 by aaamir           ###   ########.fr       */
+/*   Updated: 2022/06/18 20:33:00 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_itoa(int n)
 		nbr *= -1;
 	size = ft_length(n);
 	str = (char *)malloc(size + 1);
-	if (!(str))
+	if (!str)
 		return (0);
 	*(str + size--) = '\0';
 	while (nbr > 0)
