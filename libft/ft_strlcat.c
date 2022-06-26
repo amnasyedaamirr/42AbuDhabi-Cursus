@@ -6,7 +6,7 @@
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 00:53:05 by aaamir            #+#    #+#             */
-/*   Updated: 2022/06/15 22:15:53 by aaamir           ###   ########.fr       */
+/*   Updated: 2022/06/26 11:56:00 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	len_dest;
-	unsigned int	len_src;
-	unsigned int	k;
+	size_t	len_dest;
+	size_t	len_src;
+	size_t	k;
 
-	len_dest = ft_strlen(dest);
-	len_src = ft_strlen(src);
 	k = 0;
+	len_src = ft_strlen(src);
+	len_dest = ft_strlen(dest);
 	if (size == 0)
 		return (len_src);
 	if (size < len_dest)
@@ -32,6 +32,9 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		dest[len_dest + k] = src[k];
 		k++;
 	}
-	dest[len_dest + k] = '\0';
+	if (k > 0)
+	{
+		dest[len_dest + k] = '\0';
+	}
 	return (len_src);
 }
