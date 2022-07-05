@@ -6,7 +6,7 @@
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 18:00:38 by aaamir            #+#    #+#             */
-/*   Updated: 2022/07/05 22:29:29 by aaamir           ###   ########.fr       */
+/*   Updated: 2022/07/05 22:33:31 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,38 +68,3 @@ int	ft_printf(const char *str, ...)
 	va_end(va);
 	return (len);
 }
-
-// int	main(void)
-// {
-// 	int	i;
-
-// 	i = 567;
-// 	ft_printf("This is a char - %c and %c\n", 'a', 'b');
-// 	ft_printf("This is a string - %s %s\n", "Amna", "Aamir");
-// 	ft_printf("This is a decimal number - %d and %d\n", -42, 42);
-// 	ft_printf("This is a i number - %i and %i\n", -234, 234);
-// 	ft_printf("This is a pointer address number - %p\n", i);
-// 	ft_printf("This is a hexa small number - %x\n", 15);
-// 	ft_printf("This is a hexa capital number - %X\n", 15);
-// 	ft_printf("This is a unsigned number - %u\n", -65);
-// 	ft_printf("This is a hastag testing - %#x\n\n", i);
-// 	ft_printf("This is a space testing -\n% d\n% d\n\n\n", 555, -555);
-
-// 	// printf("This is a char - %c and %c\n", 'a', 'b');
-// 	// printf("This is a string - %s %s\n", "Amna", "Aamir");
-// 	// printf("This is a decimal number - %d and %d\n", -42, 42);
-// 	// printf("This is a i number - %i and %i\n", -234, 234);
-// 	// printf("This is a pointer address number - %p\n", i);
-// 	// printf("This is a hexa small number - %x\n", 15);
-// 	// printf("This is a hexa capital number - %X\n", 15);
-// 	// printf("This is a unsigned number - %u\n", -65);
-// 	// printf("This is a hastag testing - %#x\n", i);
-// 	// printf("This is a space testing -\n% d\n% d\n\n\n", 555, -555);
-// 	// if (str[i + 1] == '#' || str[i + 1] == ' ' || str[i + 1] == '+' )
-// 			// {
-// 			// 	len += ft_print_flags(str, va, i, len);
-// 			// 	i++;
-// 			// }
-
-// 	return (0);
-// }
