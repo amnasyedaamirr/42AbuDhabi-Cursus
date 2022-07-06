@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/12 17:41:05 by aaamir            #+#    #+#             */
-/*   Updated: 2022/07/03 11:32:33 by aaamir           ###   ########.fr       */
+/*   Created: 2022/05/22 00:56:20 by aaamir            #+#    #+#             */
+/*   Updated: 2022/07/06 21:04:48 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-int	ft_putchar_fd(char c, int fd)
+size_t	ft_strlen(const char *str)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
-	write(fd, &c, 1);
-	count++;
-
+	while (*str++ != '\0')
+	{
+		count++;
+	}
 	return (count);
 }

@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 11:41:29 by aaamir            #+#    #+#             */
-/*   Updated: 2022/07/04 20:45:34 by aaamir           ###   ########.fr       */
+/*   Created: 2022/06/12 17:42:23 by aaamir            #+#    #+#             */
+/*   Updated: 2022/07/06 21:04:28 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../ft_printf.h"
 
-#include "ft_printf.h"
-
-int	ft_putnbr_base(unsigned int nbr, unsigned int base, char *base_digits)
+int	ft_print_str(char *s, int fd)
 {
-	int				count;
-	unsigned int	nb;
+	int	count;
 
 	count = 0;
-	nb = nbr;
-
-	if (nb >= base)
+	if (s != NULL)
 	{
-		count += ft_putnbr_base((nb / base), base, base_digits);
-		count += ft_putnbr_base((nb % base), base, base_digits);
+		while (s[count])
+		{
+			ft_print_char(s[count], fd);
+			count++;
+		}	
 	}
 	else
 	{
-		ft_putchar_fd(base_digits[nb], 1);
-		count++;
+		ft_print_str("(null)", 1);
+		count = 6;
 	}
 	return (count);
 }

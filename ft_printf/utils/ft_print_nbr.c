@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putvar_addr.c                                   :+:      :+:    :+:   */
+/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/03 11:41:29 by aaamir            #+#    #+#             */
-/*   Updated: 2022/07/04 21:22:46 by aaamir           ###   ########.fr       */
+/*   Created: 2022/06/12 17:42:03 by aaamir            #+#    #+#             */
+/*   Updated: 2022/07/06 21:04:10 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../ft_printf.h"
 
-#include "ft_printf.h"
-
-int	ft_putvar_addr(unsigned long nbr, char *base_digits)
+int	ft_print_nbr(int n, int fd)
 {
-	int	count;
+	unsigned int	nbr;
+	int				count;
 
-	count = 2;
-	if (nbr >= 16)
+	nbr = (unsigned int)n;
+	count = 0;
+	if (n < 0)
 	{
-		count += ft_putvar_addr(nbr / 16, base_digits);
-		count += ft_putvar_addr(nbr % 16, base_digits);
+		ft_print_char('-', fd);
+		nbr = -1 * (n);
+		count++;
+	}
+	if (nbr >= 10)
+	{
+		count += ft_print_nbr(nbr / 10, fd);
+		count += ft_print_nbr(nbr % 10, fd);
 	}
 	else
 	{
-		ft_putchar_fd(base_digits[nbr], 1);
+		ft_print_char(nbr + '0', fd);
 		count++;
 	}
 	return (count);

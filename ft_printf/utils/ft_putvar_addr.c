@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putvar_addr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/12 17:42:23 by aaamir            #+#    #+#             */
-/*   Updated: 2022/07/03 11:35:49 by aaamir           ###   ########.fr       */
+/*   Created: 2022/07/03 11:41:29 by aaamir            #+#    #+#             */
+/*   Updated: 2022/07/06 21:04:42 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
 
-int	ft_putstr_fd(char *s, int fd)
+#include "../ft_printf.h"
+
+int	ft_putvar_addr(unsigned long nbr, char *base_digits)
 {
 	int	count;
 
 	count = 0;
-	if (s != NULL)
+	if (nbr >= 16)
 	{
-		while (s[count])
-		{
-			ft_putchar_fd(s[count], fd);
-			count++;
-		}	
+		count += ft_putvar_addr(nbr / 16, base_digits);
+		count += ft_putvar_addr(nbr % 16, base_digits);
+	}
+	else
+	{
+		ft_print_char(base_digits[nbr], 1);
+		count++;
 	}
 	return (count);
 }
