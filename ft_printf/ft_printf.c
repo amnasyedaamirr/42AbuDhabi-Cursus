@@ -6,14 +6,11 @@
 /*   By: aaamir <aaamir@42abudhabi.ae>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 18:00:38 by aaamir            #+#    #+#             */
-/*   Updated: 2022/07/06 20:58:57 by aaamir           ###   ########.fr       */
+/*   Updated: 2022/07/08 15:17:41 by aaamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdarg.h>
 
 int	ft_print_formats(const char *format, va_list *va)
 {
@@ -60,7 +57,9 @@ int	ft_printf(const char *str, ...)
 			return (len);
 		}
 		if (*str == '%')
+		{
 			len += ft_print_formats(++str, &va);
+		}
 		else
 			len += ft_print_char(*str, 1);
 		str++;
