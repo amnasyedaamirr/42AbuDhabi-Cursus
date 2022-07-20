@@ -6,14 +6,6 @@
 	<b><i>YOUR VERY FIRST OWN LIBRARY</i></b><br>
 </p>
 
-<p align="center">
-	<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/amnasyedaamir/libft?color=lightblue" />
-	<img alt="Number of lines of code" src="https://img.shields.io/tokei/lines/github/surfi89/libft?color=critical" />
-	<img alt="Code language count" src="https://img.shields.io/github/languages/count/surfi89/libft?color=yellow" />
-	<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/surfi89/libft?color=blue" />
-	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/surfi89/libft?color=green" />
-</p>
-
 <h3 align="center">
 	<a href="#%EF%B8%8F-about">About</a>
 	<span> · </span>
@@ -42,13 +34,13 @@ I have just put them in folders and modified the Makefile to have a better organ
 
 ### Functions from `<ctype.h>` library
 
-* [`ft_isascii`](sources/ft_isascii.c)			- test for ASCII character.
-* [`ft_isalnum`](sources/ft_isalnum.c)			- alphanumeric character test.
-* [`ft_isalpha`](sources/ft_isalpha.c)			- alphabetic character test.
-* [`ft_isdigit`](sources/ft_isdigit.c)			- decimal-digit character test.
-* [`ft_isprint`](sources/ft_isprint.c)			- printing character test (space character inclusive).
-* [`ft_tolower`](sources/ft_tolower.c)			- upper case to lower case letter conversion.
-* [`ft_toupper`](sources/ft_toupper.c)			- lower case to upper case letter conversion.
+* [`ft_isascii`](https://github.com/amnasyedaamirr/42AbuDhabi-Cursus/blob/main/libft/ft_isascii.c)			- test for ASCII character.
+* [`ft_isalnum`](https://github.com/amnasyedaamirr/42AbuDhabi-Cursus/blob/main/libft/ft_isalnum.c)			- alphanumeric character test.
+* [`ft_isalpha`]([sources/](https://github.com/amnasyedaamirr/42AbuDhabi-Cursus/blob/main/libft/)ft_isalpha.c)			- alphabetic character test.
+* [`ft_isdigit`]([sources/](https://github.com/amnasyedaamirr/42AbuDhabi-Cursus/blob/main/libft/)ft_isdigit.c)			- decimal-digit character test.
+* [`ft_isprint`]([sources/](https://github.com/amnasyedaamirr/42AbuDhabi-Cursus/blob/main/libft/)ft_isprint.c)			- printing character test (space character inclusive).
+* [`ft_tolower`]([sources/](https://github.com/amnasyedaamirr/42AbuDhabi-Cursus/blob/main/libft/)ft_tolower.c)			- upper case to lower case letter conversion.
+* [`ft_toupper`]([sources/](https://github.com/amnasyedaamirr/42AbuDhabi-Cursus/blob/main/libft/)ft_toupper.c)			- lower case to upper case letter conversion.
 
 ### Functions from `<stdlib.h>` library
 
