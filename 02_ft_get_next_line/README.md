@@ -26,7 +26,7 @@
 	on manipulating files for data management and persistence.
 	This project consists of coding a function that returns one line at a time from a text file.
 
-For more detailed information, look at the [**subject of this project**](https://github.com/amnasyedaamirr/42AbuDhabi-Cursus/blob/main/Subjects/02_get_next_line.pdf). For walkthrough of this project, folow this [**article by Mia Combeau**](https://www.codequoi.com/en/42-get_next_line-project/).
+For more detailed information, look at the [**subject of this project**](https://github.com/amnasyedaamirr/42AbuDhabi-Cursus/blob/main/Subjects/02_get_next_line.pdf). For a walkthrough, follow this [**article by Mia Combeau**](https://www.codequoi.com/en/42-get_next_line-project/).
 
 
 ## 🛠️ Usage
