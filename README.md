@@ -17,12 +17,8 @@
 
 ## 💡 About 42 School
 
-	42 is a private, nonprofit and tuition-free computer programming school that proposes a new
-	way of learning: no teachers, no books, students learning one from others (peer to peer learning),
-	with a methodology that develops both computing and life skills.
-	The "C Piscine" is a 26-day C programming bootcamp, and the last stage in the selection process
-	for becoming a 42's student.
-  
+> The 42 Network is bound by a common system and set of values that allow students to free their creativity while they master self-discipline through project-based, practical learning. It is a private, nonprofit and tuition-free computer programming school that proposes a new way of learning: no teachers, no books, students learning one from others (peer to peer learning), with a methodology that develops both computing and life skills. 42 Abu Dhabi is part of the 42 Global Network with 42 coding schools around the world. The "C Piscine" is a 26-day C programming bootcamp, and the last stage in the selection process for becoming a 42's student.
+ <br/> 
  <p> For more information have a look at the <a href="https://42abudhabi.ae/curriculum/"> 42 Abu Dhabi's Curriculum </a></p>
 
 ## 🛠️ Skills developed at 42cursus
