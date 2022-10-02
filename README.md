@@ -23,17 +23,29 @@
 
 ## 🛠️ Skills developed at 42cursus
 
+ <p> For detailed skills, have a look at <a href="https://42abudhabi.ae/curriculum/"> 42 Abu Dhabi's Curriculum </a></p>
+
 ### Hard-skills
 
-	* C/C++ language, Makefile
-	* Shell scripting
-	* Git
-	* Networks
-	* Docker
-	* SQL
-	* Web (HTML, CSS, Wordpress)
-	* Computer graphics
+	* Algorithms & AI
 	* Assembly language
+	* C/C++ language, Makefile
+	* Databases & Data
+	* Docker
+	* Functional Programming
+	* Git
+	* Graphics
+	* Imperative Programming
+	* Network & System Admin
+	* Networks
+	* Object Oriented Programming
+	* Parallel Computing
+	* SQL
+	* Security
+	* Shell scripting
+	* Technology Integration
+	* Unix
+	* Web
 
 -- among others.
 
